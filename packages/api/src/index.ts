@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Express } from 'express';
 import cors from 'cors';
 import { config, validateConfig } from './config';
 import { initializeSupabase } from '@plate/database';
@@ -12,7 +12,7 @@ validateConfig();
 // Initialize Supabase client
 initializeSupabase(config.supabase.url, config.supabase.anonKey);
 
-const app = express();
+const app: Express = express();
 
 // Middleware
 app.use(cors());

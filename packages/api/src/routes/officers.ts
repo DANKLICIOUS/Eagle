@@ -1,4 +1,4 @@
-import { Router, Request, Response, NextFunction } from 'express';
+import { Router, type Router as ExpressRouter, Request, Response, NextFunction } from 'express';
 import {
   getOfficerByTaxId,
   getOfficersByLastName,
@@ -11,7 +11,7 @@ import {
 import { LLMOrchestration, type LegalAnalysis } from '../services/llm-orchestration';
 import { APIError } from '../middleware/errorHandler';
 
-const router = Router();
+const router: ExpressRouter = Router();
 
 /**
  * Response interface for officer detail endpoint.

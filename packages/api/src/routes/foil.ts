@@ -1,4 +1,4 @@
-import { Router, Request, Response, NextFunction } from 'express';
+import { Router, type Router as ExpressRouter, Request, Response, NextFunction } from 'express';
 import {
   getOfficerByTaxId,
   getAllegationsByOfficerTaxId,
@@ -8,7 +8,7 @@ import {
 import { LLMOrchestration, type FOILContext } from '../services/llm-orchestration';
 import { APIError } from '../middleware/errorHandler';
 
-const router = Router();
+const router: ExpressRouter = Router();
 
 /**
  * Response interface for FOIL letter generation endpoint.
