@@ -1,0 +1,1 @@
+export { SocrataService } from "./socrata";

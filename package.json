@@ -1,0 +1,21 @@
+{
+  "name": "plate",
+  "version": "0.1.0",
+  "description": "Pro Se Legal Accountability & Transparency Engine",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.10.6"
+  },
+  "dependencies": {
+    "@sentry/browser": "^10.55.0",
+    "@supabase/sentry-js-integration": "^0.3.0",
+    "@supabase/supabase-js": "^2.106.2",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

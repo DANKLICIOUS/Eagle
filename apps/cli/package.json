@@ -1,0 +1,27 @@
+{
+  "name": "@plate/cli",
+  "version": "0.1.0",
+  "description": "PLATE command-line interface for FOIL automation",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "plate": "dist/cli.js"
+  },
+  "scripts": {
+    "dev": "ts-node src/cli.ts",
+    "build": "tsc",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "@plate/api": "workspace:*",
+    "yargs": "^17.7.2",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.10.6",
+    "@types/yargs": "^17.0.30"
+  }
+}
