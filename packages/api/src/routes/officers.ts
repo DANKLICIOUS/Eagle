@@ -116,12 +116,12 @@ router.get(
       const { lastName, firstName } = req.query;
 
       // Validate required parameters
-      if (!lastName || typeof lastName !== 'string') {
+      if (typeof lastName !== 'string') {
         throw new APIError(400, 'lastName query parameter is required and must be a string.');
       }
 
       if (lastName.trim().length === 0) {
-        throw new APIError(400, 'lastName cannot be empty.');
+        throw new APIError(400, 'lastName cannot be empty string.');
       }
 
       // Fetch officers by last name
