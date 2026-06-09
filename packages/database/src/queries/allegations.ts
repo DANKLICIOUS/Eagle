@@ -45,7 +45,7 @@ export async function getAllegationsByOfficerTaxId(
  * @returns The allegation or null if not found
  * @throws Error on database errors (not on 404)
  */
-export async function getAllegationsByComplaintId(
+export async function getAllegationByComplaintId(
   complaintId: string
 ): Promise<CCRBAllegation | null> {
   const client = getSupabaseClient();

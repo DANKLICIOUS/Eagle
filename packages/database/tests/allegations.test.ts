@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import {
   getAllegationsByOfficerTaxId,
-  getAllegationsByComplaintId,
+  getAllegationByComplaintId,
   upsertAllegation,
   getAllegationStats,
 } from "../src/queries/allegations";
@@ -150,7 +150,7 @@ describe("Allegation Queries", () => {
     });
   });
 
-  describe("getAllegationsByComplaintId", () => {
+  describe("getAllegationByComplaintId", () => {
     it("should return allegation by complaint_id", async () => {
       const mockFrom = vi.fn().mockReturnValue({
         select: vi.fn().mockReturnValue({
@@ -169,7 +169,7 @@ describe("Allegation Queries", () => {
 
       initializeSupabase("https://test.supabase.co", "test-key", mockClient);
 
-      const result = await getAllegationsByComplaintId("CCRB-2024-001");
+      const result = await getAllegationByComplaintId("CCRB-2024-001");
       expect(result).toEqual(mockAllegation);
     });
 
@@ -191,7 +191,7 @@ describe("Allegation Queries", () => {
 
       initializeSupabase("https://test.supabase.co", "test-key", mockClient);
 
-      const result = await getAllegationsByComplaintId("nonexistent");
+      const result = await getAllegationByComplaintId("nonexistent");
       expect(result).toBeNull();
     });
 
@@ -216,7 +216,7 @@ describe("Allegation Queries", () => {
 
       initializeSupabase("https://test.supabase.co", "test-key", mockClient);
 
-      await expect(getAllegationsByComplaintId("CCRB-2024-001")).rejects.toThrow(
+      await expect(getAllegationByComplaintId("CCRB-2024-001")).rejects.toThrow(
         "Failed to fetch allegation"
       );
     });
