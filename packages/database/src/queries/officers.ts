@@ -105,18 +105,17 @@ export async function upsertOfficer(
     updated_at: new Date().toISOString(),
   };
 
-  const result: any = await (client as any)
+  const { data, error } = await client
     .from("officer_profiles")
     .upsert([officerData], { onConflict: "tax_id" })
     .select()
     .single();
 
-  if (result.error) {
+  if (error) {
     throw new Error(
-      `Failed to upsert officer with tax_id ${officer.tax_id}: ${result.error.message}`
+      `Failed to upsert officer with tax_id ${officer.tax_id}: ${error.message}`
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return result.data;
+  return data as OfficerProfile;
 }

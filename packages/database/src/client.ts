@@ -2,9 +2,8 @@ import {
   createClient,
   SupabaseClient,
 } from "@supabase/supabase-js";
-import { DatabaseSchema } from "./types";
 
-let supabaseClient: SupabaseClient<DatabaseSchema> | null = null;
+let supabaseClient: SupabaseClient | null = null;
 
 /**
  * Initialize the Supabase client as a singleton.
@@ -18,7 +17,7 @@ let supabaseClient: SupabaseClient<DatabaseSchema> | null = null;
 export function initializeSupabase(
   url: string,
   key: string,
-  client?: SupabaseClient<DatabaseSchema>
+  client?: SupabaseClient
 ): void {
   if (supabaseClient !== null) {
     throw new Error("Supabase client is already initialized");
@@ -27,7 +26,7 @@ export function initializeSupabase(
   if (client) {
     supabaseClient = client;
   } else {
-    supabaseClient = createClient<DatabaseSchema>(url, key);
+    supabaseClient = createClient(url, key);
   }
 }
 
@@ -37,7 +36,7 @@ export function initializeSupabase(
  * @returns The Supabase client
  * @throws Error if client has not been initialized
  */
-export function getSupabaseClient(): SupabaseClient<DatabaseSchema> {
+export function getSupabaseClient(): SupabaseClient {
   if (supabaseClient === null) {
     throw new Error(
       "Supabase client has not been initialized. Call initializeSupabase() first."

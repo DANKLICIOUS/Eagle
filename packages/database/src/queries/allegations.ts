@@ -88,20 +88,19 @@ export async function upsertAllegation(
     updated_at: new Date().toISOString(),
   };
 
-  const result: any = await (client as any)
+  const { data, error } = await client
     .from("ccrb_allegations")
     .upsert([allegationData], { onConflict: "complaint_id" })
     .select()
     .single();
 
-  if (result.error) {
+  if (error) {
     throw new Error(
-      `Failed to upsert allegation with complaint_id ${allegation.complaint_id}: ${result.error.message}`
+      `Failed to upsert allegation with complaint_id ${allegation.complaint_id}: ${error.message}`
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return result.data;
+  return data as CCRBAllegation;
 }
 
 /**
