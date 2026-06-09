@@ -82,6 +82,10 @@ export class SocrataService {
 
         totalFetched += batch.length;
 
+        // TODO: When Supabase supports batch upsert operations or we switch to raw SQL,
+        // implement chunked bulk inserts here for better performance on full syncs.
+        // Currently, each upsert is a separate request due to SDK limitations.
+
         // Upsert each record individually to track per-record errors
         for (const allegation of batch) {
           try {
@@ -129,6 +133,9 @@ export class SocrataService {
     if (whereClause) {
       params.append("$where", whereClause);
     }
+
+    // Add stable ordering to ensure consistent pagination
+    params.append("$order", "complaint_id");
 
     const url = `${SOCRATA_ENDPOINT}?${params.toString()}`;
 
