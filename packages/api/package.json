@@ -12,6 +12,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
     "@plate/database": "workspace:*",
     "@supabase/supabase-js": "^2.106.2",
     "jsonwebtoken": "^9.0.3",
