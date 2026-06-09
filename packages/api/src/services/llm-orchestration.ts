@@ -242,4 +242,71 @@ Focus on factual, substantiated information, legal citations to NY Public Office
       throw error;
     }
   }
+
+  /**
+   * Generates a formal FOIL letter document based on officer profile and FOIL context
+   * Creates a legal letter that self-representing individuals can print and submit to NYPD/courts
+   * Includes statute citations (NY Public Officers Law § 84, 87, 89)
+   */
+  static async generateFOILLetter(
+    officer: OfficerProfile,
+    context: FOILContext
+  ): Promise<string> {
+    const letterDate = new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+
+    const prompt = `You are an expert legal document writer. Generate a formal FOIL (Freedom of Information Law) letter that a self-representing individual can submit to the NYPD or courts. The letter should reference the officer and their misconduct pattern.
+
+OFFICER INFORMATION:
+- Name: ${officer.first_name || 'Officer'} ${officer.last_name || '(Name Unknown)'}
+- Badge Number: ${officer.badge_number || 'Unknown'}
+- Rank: ${officer.rank || 'Unknown'}
+- Precinct: ${officer.precinct_number || 'Unknown'}
+
+FOIL CONTEXT:
+- Officer Misconduct Summary: ${context.officerMisconduct}
+- Misconduct Examples: ${context.misconduct_examples.join('; ')}
+- Legal Arguments: ${context.legal_arguments.join('; ')}
+- Evidence Gaps: ${context.evidence_gaps.join('; ')}
+
+Generate a formal, professional FOIL letter that:
+1. Starts with proper legal heading and date (${letterDate})
+2. Identifies the requesting agency (NYPD) and the specific officer
+3. Contains at least one cite to NY Public Officers Law § 84, § 87, or § 89 for each legal argument presented
+4. Requests specific categories of documents based on the substantiated misconduct
+5. Is formatted as a complete, printable legal document
+6. Includes proper legal formatting (addressee, salutation, body, closing)
+7. Specifies the statutory response timeline (20 business days)
+8. Can be printed and submitted immediately by the user
+
+Return ONLY the letter text, formatted and ready to print. No markdown, no code blocks, just the complete legal document.`;
+
+    try {
+      const message = await client.messages.create({
+        model: 'claude-opus-4-8',
+        max_tokens: 4096,
+        messages: [
+          {
+            role: 'user',
+            content: prompt,
+          },
+        ],
+      });
+
+      // Extract text content from response
+      const textContent = message.content.find((c) => c.type === 'text');
+      if (!textContent || textContent.type !== 'text') {
+        throw new Error('No text content in response');
+      }
+
+      // Return the letter text as-is (no JSON parsing needed)
+      return textContent.text;
+    } catch (error) {
+      console.error('Error generating FOIL letter:', error);
+      throw error;
+    }
+  }
 }
