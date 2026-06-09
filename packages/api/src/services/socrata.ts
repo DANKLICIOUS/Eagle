@@ -1,4 +1,11 @@
-import { CCRBAllegation } from "@plate/database";
+import { CCRBAllegation, upsertAllegation } from "@plate/database";
+
+export interface SyncStats {
+  fetched: number;
+  upserted: number;
+  errors: number;
+  duration: number;
+}
 
 interface SocrataRawRecord {
   complaint_id: string;
@@ -46,6 +53,68 @@ export class SocrataService {
 
   static async fetchAll(offset: number = 0): Promise<CCRBAllegation[]> {
     return this.fetchRecords("", offset);
+  }
+
+  /**
+   * Perform a full sync of all CCRB allegations from Socrata.
+   * Fetches all records in batches and upserts them into the database.
+   * Individual record failures do not halt the sync.
+   *
+   * @returns SyncStats with fetched, upserted, error counts and duration in milliseconds
+   * @throws Error if pagination or network fails (halts sync)
+   */
+  static async fullSync(): Promise<SyncStats> {
+    const startTime = Date.now();
+    let offset = 0;
+    let totalFetched = 0;
+    let totalUpserted = 0;
+    let totalErrors = 0;
+
+    try {
+      while (true) {
+        console.log(`Fetching Socrata records at offset ${offset}...`);
+        const batch = await this.fetchAll(offset);
+
+        if (batch.length === 0) {
+          console.log("No more records to fetch, sync complete");
+          break;
+        }
+
+        totalFetched += batch.length;
+
+        // Upsert each record individually to track per-record errors
+        for (const allegation of batch) {
+          try {
+            await upsertAllegation(allegation);
+            totalUpserted++;
+          } catch (error) {
+            totalErrors++;
+            console.error(
+              `Failed to upsert allegation ${allegation.complaint_id}:`,
+              error instanceof Error ? error.message : String(error)
+            );
+          }
+        }
+
+        offset += PAGE_SIZE;
+      }
+    } catch (error) {
+      // Network or pagination errors halt the sync
+      console.error("Socrata sync halted due to fetch error:", error);
+      throw error;
+    }
+
+    const duration = Date.now() - startTime;
+
+    const stats: SyncStats = {
+      fetched: totalFetched,
+      upserted: totalUpserted,
+      errors: totalErrors,
+      duration,
+    };
+
+    console.log(`Sync complete: ${JSON.stringify(stats)}`);
+    return stats;
   }
 
   private static async fetchRecords(
