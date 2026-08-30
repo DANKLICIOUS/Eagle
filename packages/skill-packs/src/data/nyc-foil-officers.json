@@ -1,0 +1,1670 @@
+{
+  "source": "NYC FOIL officers directory (user-provided). Verify the email on the agency site before you file.",
+  "agencies": [
+    {
+      "entity": "Administration for Children's Services",
+      "access": {
+        "first": "Janet",
+        "last": "Stateman",
+        "title": "Agency Attorney",
+        "email": "gc.foil@acs.nyc.gov"
+      },
+      "appeals": {
+        "first": "Nikisha",
+        "last": "Ferguson",
+        "title": "Attorney",
+        "email": "foilappeal@acs.nyc.gov"
+      }
+    },
+    {
+      "entity": "Board of Correction",
+      "access": {
+        "first": "Alicia",
+        "last": "Prainito",
+        "title": "Legal Associate",
+        "email": "bocfoil@boc.nyc.gov"
+      },
+      "appeals": {
+        "first": "Melissa",
+        "last": "Cintr\u00f3n Hern\u00e1ndez",
+        "title": "General Counsel",
+        "email": "bocfoil@boc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Board of Standards and Appeals",
+      "access": {
+        "first": "Kevin",
+        "last": "Trimmer",
+        "title": "",
+        "email": "ketrimmer@bsa.nyc.gov"
+      },
+      "appeals": {
+        "first": "Chase",
+        "last": "Vine",
+        "title": "",
+        "email": "cvine@bsa.nyc.gov"
+      }
+    },
+    {
+      "entity": "Borough President - Bronx",
+      "access": {
+        "first": "Stacy",
+        "last": "Strong",
+        "title": "FOIL/Records Access Officer",
+        "email": "FOIL@bronxbp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Robert P.",
+        "last": "Miraglia",
+        "title": "FOIL/Records Appeals Officer",
+        "email": "FOILappeals@bronxbp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Borough President - Manhattan",
+      "access": {
+        "first": "Jonathan",
+        "last": "Weinberg",
+        "title": "General Counsel",
+        "email": "jweinberg@manhattanbp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jonath",
+        "last": "Rose",
+        "title": "Chief of Staff",
+        "email": "jonahrose@manhattanbp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Borough President - Queens",
+      "access": {
+        "first": "Katherine",
+        "last": "Zapata",
+        "title": "Deputy Director of Intergovernmental Affairs & Director of Education",
+        "email": "kzapata@queensbp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Allan",
+        "last": "Swisher",
+        "title": "General Counsel & Senior Policy Advisor",
+        "email": "alswisher@queensbp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Borough President - Staten Island",
+      "access": {
+        "first": "Daniel L.",
+        "last": "Master",
+        "title": "Counsel to the Borough President",
+        "email": "dmaster@statenislandusa.com"
+      },
+      "appeals": {
+        "first": "Stephen",
+        "last": "Caracappa",
+        "title": "Agency Attorney",
+        "email": "scaracappa@statenislandusa.com"
+      }
+    },
+    {
+      "entity": "Business Integrity Commission",
+      "access": {
+        "first": "Stella",
+        "last": "Adegite",
+        "title": "Executive Agency Counsel",
+        "email": "foil@bic.nyc.gov"
+      },
+      "appeals": {
+        "first": "David",
+        "last": "Mandell",
+        "title": "Associate Commissioner of Legal Affairs",
+        "email": "dmandell@bic.nyc.gov"
+      }
+    },
+    {
+      "entity": "Campaign Finance Board",
+      "access": {
+        "first": "Rhonda",
+        "last": "Gaskins",
+        "title": "Director of Records, Data and Information",
+        "email": "rgaskins@nyccfb.info"
+      },
+      "appeals": {
+        "first": "Stephen",
+        "last": "Larson",
+        "title": "General Counsel",
+        "email": "SLarson@NYCCFB.INFO"
+      }
+    },
+    {
+      "entity": "Civil Service Commission",
+      "access": {
+        "first": "Armand",
+        "last": "Zappa",
+        "title": "Agency Attorney",
+        "email": "customersvce@nyccsc.nyc.gov"
+      },
+      "appeals": {
+        "first": "Amanda",
+        "last": "Wismans",
+        "title": "Executive Agency Counsel",
+        "email": "submissions@nyccsc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Civilian Complaint Review Board",
+      "access": {
+        "first": "Jacqueline",
+        "last": "Levy",
+        "title": "Records Access Officer",
+        "email": "foil@ccrb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Kerry",
+        "last": "Jamieson",
+        "title": "Assistant General Counsel",
+        "email": "foil@ccrb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Commission on Racial Equity",
+      "access": {
+        "first": "Wesley",
+        "last": "Brown",
+        "title": "Senior Compliance Associate",
+        "email": "COREFoil@core.nyc.gov"
+      },
+      "appeals": {
+        "first": "Rachel",
+        "last": "Natelson",
+        "title": "",
+        "email": "COREFoil@core.nyc.gov"
+      }
+    },
+    {
+      "entity": "Commission to Combat Police Corruption",
+      "access": {
+        "first": "Vanya",
+        "last": "Hersh",
+        "title": "Examining Attorney",
+        "email": "vhersh@doi.nyc.gov"
+      },
+      "appeals": {
+        "first": "Agnes",
+        "last": "Kusmierska",
+        "title": "Examining Attorney",
+        "email": "akusmierska@doi.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 11",
+      "access": {
+        "first": "Harriet",
+        "last": "Lasky",
+        "title": "Community Coordinator",
+        "email": "Bx11foil@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jeremy",
+        "last": "Warneke",
+        "title": "District Manager",
+        "email": "bx11@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 12",
+      "access": {
+        "first": "Ursula",
+        "last": "Greene",
+        "title": "Community Coordinator",
+        "email": "UGreene@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "George",
+        "last": "Torres",
+        "title": "District Manager",
+        "email": "geotorres@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 2",
+      "access": {
+        "first": "Rafael",
+        "last": "Acevedo",
+        "title": "District Manager",
+        "email": "racevedo@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Roberto",
+        "last": "Crespo",
+        "title": "Chairman",
+        "email": "rc2905@optonline.net"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 3",
+      "access": {
+        "first": "Etta",
+        "last": "Ritter",
+        "title": "District Manager",
+        "email": "eritter@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Courtland",
+        "last": "Hankins",
+        "title": "Community Coordinator",
+        "email": "Chankins@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 4",
+      "access": {
+        "first": "Leonardo",
+        "last": "Coello",
+        "title": "District Manager",
+        "email": "LCoello@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Elizabeth",
+        "last": "Gonzalez",
+        "title": "Community Associate",
+        "email": "EGonzalez@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 5",
+      "access": {
+        "first": "Ken",
+        "last": "Brown",
+        "title": "District Manager",
+        "email": "Kbrown@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Osiris",
+        "last": "Guzman",
+        "title": "Chair",
+        "email": "OGuzman@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 7",
+      "access": {
+        "first": "Karla",
+        "last": "Cabrera Carrera",
+        "title": "District Manager",
+        "email": "Kcabreracarrera@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Genesis",
+        "last": "Reyes",
+        "title": "Deputy District Manager",
+        "email": "gereyes@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Bronx 9",
+      "access": {
+        "first": "William",
+        "last": "Rivera",
+        "title": "District Manager",
+        "email": "wrivera@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Mohammed",
+        "last": "Mujumder",
+        "title": "Chairperson",
+        "email": "MMujumder@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 10",
+      "access": {
+        "first": "Josephine",
+        "last": "Beckmann",
+        "title": "District Manager",
+        "email": "jbeckmann@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Dorothy",
+        "last": "Garuccio",
+        "title": "Community Coordinator",
+        "email": "dgaruccio@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 11",
+      "access": {
+        "first": "Marnee",
+        "last": "Elias-Pavia",
+        "title": "District Manager",
+        "email": "melias-pavia@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Shirley",
+        "last": "Grant",
+        "title": "Community Coordinator",
+        "email": "shgrant@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 15",
+      "access": {
+        "first": "Laura",
+        "last": "Singer",
+        "title": "District Manager",
+        "email": "lasinger@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jacob",
+        "last": "Aronson",
+        "title": "Community Assistant",
+        "email": "JAronson@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 16",
+      "access": {
+        "first": "Sydone",
+        "last": "Thompson",
+        "title": "District Manager",
+        "email": "BK16@CB.NYC.GOV"
+      },
+      "appeals": {
+        "first": "Hawa",
+        "last": "Barry",
+        "title": "Assistant District Manager",
+        "email": "BK16@CB.NYC.GOV"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 17",
+      "access": {
+        "first": "Sherif",
+        "last": "Fraser",
+        "title": "District Manager",
+        "email": "BK17@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Ayanna",
+        "last": "Sinclair",
+        "title": "Community Associate",
+        "email": "BK17@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 18",
+      "access": {
+        "first": "Dorothy",
+        "last": "Paul",
+        "title": "Assistant District Manager",
+        "email": "dpaul@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Gail",
+        "last": "Fazio",
+        "title": "Community Assistant",
+        "email": "gafazio@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 7",
+      "access": {
+        "first": "Natasha",
+        "last": "Cordero",
+        "title": "Community Associate",
+        "email": "ncordero@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Maria",
+        "last": "Gonzalez",
+        "title": "Assistant District Manager",
+        "email": "magonzalez@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 8",
+      "access": {
+        "first": "Michelle",
+        "last": "George",
+        "title": "District Manager",
+        "email": "Brooklyncb8@gmail.com"
+      },
+      "appeals": {
+        "first": "Irsa",
+        "last": "Weatherspoon",
+        "title": "Chairperson",
+        "email": "Brooklyncb8@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Brooklyn 9",
+      "access": {
+        "first": "Dante",
+        "last": "Arnwine",
+        "title": "District Manager",
+        "email": "darnwine@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Fred",
+        "last": "Baptiste",
+        "title": "Chairperson",
+        "email": "fredbaptiste@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 1",
+      "access": {
+        "first": "Zach",
+        "last": "Bommer",
+        "title": "DIstrict Manager",
+        "email": "zacbommer@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Tammy",
+        "last": "Meltzer",
+        "title": "Chair of the Board",
+        "email": "Tmeltzernyc@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 10",
+      "access": {
+        "first": "Kendall",
+        "last": "Glaspie",
+        "title": "District Manager",
+        "email": "kglaspie@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Marquis",
+        "last": "Harrison",
+        "title": "CB10 Chair",
+        "email": "marquisalexander4harlem@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 11",
+      "access": {
+        "first": "Angel",
+        "last": "Mescain",
+        "title": "District Manager",
+        "email": "amescain@cb11m.org"
+      },
+      "appeals": {
+        "first": "Adem",
+        "last": "Brija",
+        "title": "Board Chair",
+        "email": "chair@cb11m.org"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 2",
+      "access": {
+        "first": "Mark",
+        "last": "Diller",
+        "title": "District Manager",
+        "email": "madiller@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Valerie",
+        "last": "De La Rosa",
+        "title": "Chair",
+        "email": "valerie.delarosa.cb2@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 4",
+      "access": {
+        "first": "Jesse",
+        "last": "Bodine",
+        "title": "District Manager",
+        "email": "jbodine@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Nelly",
+        "last": "Gonzalez",
+        "title": "Assistant District Manager",
+        "email": "negonzalez@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 5",
+      "access": {
+        "first": "Marisa",
+        "last": "Maack",
+        "title": "District Manager",
+        "email": "Marisa@cb5.org"
+      },
+      "appeals": {
+        "first": "Bradley",
+        "last": "Sherburne",
+        "title": "Chair",
+        "email": "Bradley.Sherburne.cb5@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 7",
+      "access": {
+        "first": "Jessie",
+        "last": "Nieves",
+        "title": "District Manager",
+        "email": "ynieves@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Alex",
+        "last": "Bell",
+        "title": "MCB7 Chairperson",
+        "email": "albell@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 8",
+      "access": {
+        "first": "Ian",
+        "last": "McKnight",
+        "title": "District Manager",
+        "email": "mcknight@cb8m.com"
+      },
+      "appeals": {
+        "first": "Jordyn",
+        "last": "Lee",
+        "title": "Assistant District Manager",
+        "email": "lee@cb8m.com"
+      }
+    },
+    {
+      "entity": "Community Board - Manhattan 9",
+      "access": {
+        "first": "Ashley",
+        "last": "Tapia",
+        "title": "Community Associate",
+        "email": "ATapia@cb9m.org"
+      },
+      "appeals": {
+        "first": "Eutha",
+        "last": "Prince",
+        "title": "District Manager",
+        "email": "info@cb9m.org"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 1",
+      "access": {
+        "first": "Florence",
+        "last": "Koulouris",
+        "title": "District Manager",
+        "email": "FKoulouris@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Evie",
+        "last": "Hantzopoulos",
+        "title": "Chairperson",
+        "email": "Qn01@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 10",
+      "access": {
+        "first": "Karyn",
+        "last": "Petersen",
+        "title": "District Manager",
+        "email": "qn10@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Betty",
+        "last": "Braton",
+        "title": "Chairperson",
+        "email": "qn10@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 11",
+      "access": {
+        "first": "Joseph",
+        "last": "Marziliano",
+        "title": "District Manager",
+        "email": "qn11@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Paul",
+        "last": "DiBenedetto",
+        "title": "Chair",
+        "email": "cubba65@verizon.net"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 13",
+      "access": {
+        "first": "Queens",
+        "last": "Community Board 13",
+        "title": "District Manager",
+        "email": "mmcmillan@qcb13.org"
+      },
+      "appeals": {
+        "first": "Bryan J.",
+        "last": "Block",
+        "title": "Board Chair",
+        "email": "bblock@qcb13.org"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 14",
+      "access": {
+        "first": "Felicia",
+        "last": "Johnson",
+        "title": "District Manager",
+        "email": "QN14@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Dolores",
+        "last": "Orr",
+        "title": "Board Chairperson",
+        "email": "QN14@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 2",
+      "access": {
+        "first": "Rafael",
+        "last": "Nava",
+        "title": "Community Assistant",
+        "email": "qn02@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Anatole",
+        "last": "Ashraf",
+        "title": "Queens Community Board 2 Chairperson",
+        "email": "anatole.ashraf.qcb2@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 4",
+      "access": {
+        "first": "Christian",
+        "last": "Cassagnol",
+        "title": "District Manager",
+        "email": "ccassagnol@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Marialena",
+        "last": "Giampino",
+        "title": "Chairperson",
+        "email": "mgiampinocb4@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 5",
+      "access": {
+        "first": "Gary",
+        "last": "Giordano",
+        "title": "District Manager",
+        "email": "ggiordano@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Walter",
+        "last": "Sanchez",
+        "title": "Chairperson",
+        "email": "wasanchez@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 6",
+      "access": {
+        "first": "Christine",
+        "last": "Nolan",
+        "title": "District Manager",
+        "email": "cnolan@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Salua",
+        "last": "Baida",
+        "title": "Chair",
+        "email": "cb6queenschair@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 7",
+      "access": {
+        "first": "Marilyn",
+        "last": "McAndrews",
+        "title": "District Manager",
+        "email": "qn07@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Chuck",
+        "last": "Apelian",
+        "title": "Chairman of the Board",
+        "email": "charlesapelian@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 8",
+      "access": {
+        "first": "Marie",
+        "last": "Adam-Ovide",
+        "title": "District Manager",
+        "email": "qn08@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Martha",
+        "last": "Taylor",
+        "title": "Chairperson",
+        "email": "qn08@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Community Board - Queens 9",
+      "access": {
+        "first": "James",
+        "last": "McClelland",
+        "title": "District Manager",
+        "email": "jamcclelland@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Sherry",
+        "last": "Algredo",
+        "title": "Chair",
+        "email": "sherryacb9@gmail.com"
+      }
+    },
+    {
+      "entity": "Community Board - Staten Island 3",
+      "access": {
+        "first": "Stacey",
+        "last": "Wertheim",
+        "title": "District Manager",
+        "email": "swertheim@cb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Susan",
+        "last": "LaForgia",
+        "title": "Community Coordinator",
+        "email": "slaforgia@cb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Conflicts of Interest Board",
+      "access": {
+        "first": "Katherine",
+        "last": "Miller",
+        "title": "Director of Annual Disclosure & Special Counsel",
+        "email": "kmiller@coib.nyc.gov"
+      },
+      "appeals": {
+        "first": "Carolyn Lisa",
+        "last": "Miller",
+        "title": "Executive Director",
+        "email": "miller@coib.nyc.gov"
+      }
+    },
+    {
+      "entity": "Council Member - All",
+      "access": {
+        "first": "Danielle M.",
+        "last": "Barbato",
+        "title": "Chief Counsel -Information Governance Unit",
+        "email": "DBarbato@council.nyc.gov"
+      },
+      "appeals": {
+        "first": "Nnamdia",
+        "last": "Gooding",
+        "title": "Associate General Counsel",
+        "email": "NGooding@council.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department for the Aging",
+      "access": {
+        "first": "Emily",
+        "last": "Nyren",
+        "title": "",
+        "email": "foil@aging.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jessica",
+        "last": "Rickards",
+        "title": "",
+        "email": "jrickards@aging.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Buildings",
+      "access": {
+        "first": "Terria",
+        "last": "Ray",
+        "title": "Records Access Officer",
+        "email": "Foildob@buildings.nyc.gov"
+      },
+      "appeals": {
+        "first": "Deborah",
+        "last": "Glikin",
+        "title": "Senior Assistant General Counsel",
+        "email": "Appealfoildob@buildings.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of City Planning",
+      "access": {
+        "first": "Jennifer",
+        "last": "Bartholomew",
+        "title": "Records Access Officer",
+        "email": "Jbartholomew@planning.nyc.gov"
+      },
+      "appeals": {
+        "first": "Alec",
+        "last": "Schierenbeck",
+        "title": "General Counsel",
+        "email": "ASchierenbeck@planning.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Citywide Administrative Services",
+      "access": {
+        "first": "Alan",
+        "last": "Deutsch",
+        "title": "Senior Counsel/Records Access Officer",
+        "email": "foilrequest@dcas.nyc.gov"
+      },
+      "appeals": {
+        "first": "Melanie",
+        "last": "Braverman",
+        "title": "Chief of Staff \u2013 Special Counsel",
+        "email": "foilrequest@dcas.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Consumer and Worker Protection",
+      "access": {
+        "first": "Ashley",
+        "last": "Fisher-Griffin",
+        "title": "FOIL Officer",
+        "email": "FOIL@dcwp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Michael",
+        "last": "Tiger",
+        "title": "General Counsel",
+        "email": "FOILAPPEALS@dcwp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Correction",
+      "access": {
+        "first": "Peter",
+        "last": "Faherty",
+        "title": "Agency Attorney IV",
+        "email": "FOIL@doc.nyc.gov"
+      },
+      "appeals": {
+        "first": "Charlotte",
+        "last": "Owens",
+        "title": "Senior Counsel/Appeals Officer",
+        "email": "FOIL.Appeals@doc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Cultural Affairs",
+      "access": {
+        "first": "Omayra",
+        "last": "Nunes",
+        "title": "Records Access Officer",
+        "email": "foil@culture.nyc.gov"
+      },
+      "appeals": {
+        "first": "Samantha",
+        "last": "Rauer",
+        "title": "Deputy General Counsel",
+        "email": "appeals@culture.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Design and Construction",
+      "access": {
+        "first": "Amina",
+        "last": "Wilson",
+        "title": "Records Access Officer",
+        "email": "FOIL_Requests@ddc.nyc.gov"
+      },
+      "appeals": {
+        "first": "David",
+        "last": "Varoli",
+        "title": "General Counsel / Deputy Commissioner",
+        "email": "FOIL_Requests@ddc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Education",
+      "access": {
+        "first": "Ann",
+        "last": "Macadangdang",
+        "title": "Deputy Counsel",
+        "email": "AMacadangdang@schools.nyc.gov"
+      },
+      "appeals": {
+        "first": "Liz",
+        "last": "Vladeck",
+        "title": "",
+        "email": "FOIL@schools.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Environmental Protection",
+      "access": {
+        "first": "Diana",
+        "last": "Dellafiora",
+        "title": "Legal Affairs Office Manager/Records Access Officer",
+        "email": "FOIL@dep.nyc.gov"
+      },
+      "appeals": {
+        "first": "Russell",
+        "last": "Pecunies",
+        "title": "Senior Counsel/Appeals Officer",
+        "email": "FOILappeals@dep.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Finance",
+      "access": {
+        "first": "Sheryl",
+        "last": "Montour",
+        "title": "Sr. Records and Privacy Office",
+        "email": "DOF-FOIL@finance.nyc.gov"
+      },
+      "appeals": {
+        "first": "Dara",
+        "last": "Jaffee",
+        "title": "Assistant Commissioner",
+        "email": "foilappeals@finance.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Housing Preservation and Development",
+      "access": {
+        "first": "Dina",
+        "last": "Saffan",
+        "title": "",
+        "email": "HPDFOIL@hpd.nyc.gov"
+      },
+      "appeals": {
+        "first": "Harold",
+        "last": "Weinberg",
+        "title": "",
+        "email": "WEINH@hpd.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Investigation",
+      "access": {
+        "first": "John",
+        "last": "Carroll",
+        "title": "Deputy General Counsel",
+        "email": "Foil@doi.nyc.gov"
+      },
+      "appeals": {
+        "first": "Andrew",
+        "last": "Sein",
+        "title": "Acting General Counsel and Inspector General",
+        "email": "FOILAppeals@doi.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Parks & Recreation",
+      "access": {
+        "first": "Julie",
+        "last": "Varughese",
+        "title": "Records Access Officer",
+        "email": "foil@parks.nyc.gov"
+      },
+      "appeals": {
+        "first": "Alessandro G.",
+        "last": "Olivieri",
+        "title": "Records Appeals Officer",
+        "email": "foil@parks.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Probation",
+      "access": {
+        "first": "David",
+        "last": "Yin",
+        "title": "Associate General Counsel/Records Access Officer",
+        "email": "dyin@probation.nyc.gov"
+      },
+      "appeals": {
+        "first": "Sheri",
+        "last": "Silverblatt",
+        "title": "Deputy General Counsel",
+        "email": "Ssilverb@probation.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Records and Information Services",
+      "access": {
+        "first": "Kenneth",
+        "last": "Cobb",
+        "title": "Assistant Commissioner",
+        "email": "foil@records.nyc.gov"
+      },
+      "appeals": {
+        "first": "Shawn(ta)",
+        "last": "Smith-Cruz",
+        "title": "Commissioner",
+        "email": "Ssmithcruz@records.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Sanitation",
+      "access": {
+        "first": "Madelynn",
+        "last": "Liguori",
+        "title": "Executive Agency Counsel",
+        "email": "mliguori@dsny.nyc.gov"
+      },
+      "appeals": {
+        "first": "Robert",
+        "last": "Orlin",
+        "title": "Deputy Commissioner/General Counsel \u2013 BLA",
+        "email": "dsnyfoil@dsny.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Small Business Services",
+      "access": {
+        "first": "Shormina",
+        "last": "Ahmed",
+        "title": "Associate General Counsel",
+        "email": "sbsfoil@sbs.nyc.gov"
+      },
+      "appeals": {
+        "first": "Leemor",
+        "last": "Rozen",
+        "title": "Senior Deputy General Counsel",
+        "email": "sbsfoilappeal@sbs.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Transportation",
+      "access": {
+        "first": "Judith",
+        "last": "Falk",
+        "title": "Associate Counsel, FOIL",
+        "email": "foiladmin@dot.nyc.gov"
+      },
+      "appeals": {
+        "first": "Edalia",
+        "last": "George",
+        "title": "Assistant General Counsel",
+        "email": "foilappeal@dot.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Veterans' Services",
+      "access": {
+        "first": "Bradley",
+        "last": "Badice",
+        "title": "Analyst",
+        "email": "bbadice@veterans.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jacob",
+        "last": "Skoda",
+        "title": "Acting General Counsel",
+        "email": "jskoda@veterans.nyc.gov"
+      }
+    },
+    {
+      "entity": "Department of Youth and Community Development",
+      "access": {
+        "first": "Connor",
+        "last": "Mealey",
+        "title": "Assistant General Counsel",
+        "email": "CoMealey@dycd.nyc.gov"
+      },
+      "appeals": {
+        "first": "Sarah",
+        "last": "Friedman",
+        "title": "General Counsel",
+        "email": "FOIL@dycd.nyc.gov"
+      }
+    },
+    {
+      "entity": "District Attorney - Bronx County",
+      "access": {
+        "first": "Beverly",
+        "last": "Ma",
+        "title": "Assistant District Attorney",
+        "email": "mab@bronxda.nyc.gov"
+      },
+      "appeals": {
+        "first": "Peter",
+        "last": "Codington",
+        "title": "Assistant District Attorney",
+        "email": "coddingp@bronxda.nyc.gov"
+      }
+    },
+    {
+      "entity": "District Attorney - Queens County",
+      "access": {
+        "first": "Anastasia",
+        "last": "Spanakos-Orfan",
+        "title": "Deputy Bureau Chief, FOIL and Civil Litigation",
+        "email": "aspanakos-orfan@queensda.org"
+      },
+      "appeals": {
+        "first": "Johnnette",
+        "last": "Traill",
+        "title": "Executive Assistant District Attorney, Appeals and Special Litigation",
+        "email": "jgtraill@queensda.org"
+      }
+    },
+    {
+      "entity": "District Attorney - Staten Island (Richmond)",
+      "access": {
+        "first": "Matthew",
+        "last": "White",
+        "title": "Deputy Bureau Chief of Appeals/FOIL Officer",
+        "email": "Matthew.White@rcda.nyc.gov"
+      },
+      "appeals": {
+        "first": "Thomas",
+        "last": "Litsky",
+        "title": "Appeals Bureau Chief/FOIL Appeals Officer",
+        "email": "Thomas.Litsky@rcda.nyc.gov"
+      }
+    },
+    {
+      "entity": "Equal Employment Practices Commission",
+      "access": {
+        "first": "Andreana",
+        "last": "Mirabella",
+        "title": "Executive Agency Counsel",
+        "email": "foil@eepc.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jimmy",
+        "last": "Pan",
+        "title": "Executive Director",
+        "email": "foil@eepc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Financial Information Services Agency",
+      "access": {
+        "first": "Svetlana",
+        "last": "Iosilevich",
+        "title": "Special Counsel",
+        "email": "FISAFOIL@fisa-opa.nyc.gov"
+      },
+      "appeals": {
+        "first": "Maureen",
+        "last": "Murphy",
+        "title": "General Counsel",
+        "email": "appeals@fisa-opa.nyc.gov"
+      }
+    },
+    {
+      "entity": "Housing Recovery Operations",
+      "access": {
+        "first": "Joseph",
+        "last": "Berkman-Breen",
+        "title": "Deputy General Counsel",
+        "email": "FOIL@recovery.nyc.gov"
+      },
+      "appeals": {
+        "first": "Deborah",
+        "last": "Bander",
+        "title": "General Counsel",
+        "email": "FOILApeals@recovery.nyc.gov"
+      }
+    },
+    {
+      "entity": "Human Resources Administration",
+      "access": {
+        "first": "Samantha",
+        "last": "Arena",
+        "title": "Associate General Counsel",
+        "email": "FOIL@dss.nyc.gov"
+      },
+      "appeals": {
+        "first": "Allison Gill",
+        "last": "Lambert",
+        "title": "Acting General Counsel",
+        "email": "FOIL@dss.nyc.gov"
+      }
+    },
+    {
+      "entity": "Independent Budget Office",
+      "access": {
+        "first": "Kenneth",
+        "last": "Shelton",
+        "title": "Data Acquisition and Governance Manager",
+        "email": "keshelton@ibo.nyc.gov"
+      },
+      "appeals": {
+        "first": "Lizzy",
+        "last": "Zarate",
+        "title": "Archivist",
+        "email": "lzarate@ibo.nyc.gov"
+      }
+    },
+    {
+      "entity": "Landmarks Preservation Commission",
+      "access": {
+        "first": "Lily",
+        "last": "Fan",
+        "title": "Director of Enforcement",
+        "email": "FOIL@lpc.nyc.gov"
+      },
+      "appeals": {
+        "first": "John",
+        "last": "Weiss",
+        "title": "Deputy Counsel",
+        "email": "FOIL@lpc.nyc.gov"
+      }
+    },
+    {
+      "entity": "Law Department",
+      "access": {
+        "first": "Stefan",
+        "last": "Mooklal",
+        "title": "Records Access and Agency Privacy Officer",
+        "email": "foil@law.nyc.gov"
+      },
+      "appeals": {
+        "first": "Steven",
+        "last": "Goulden",
+        "title": "Senior Counsel",
+        "email": "foil@law.nyc.gov"
+      }
+    },
+    {
+      "entity": "Loft Board",
+      "access": {
+        "first": "Kimberly",
+        "last": "Hines",
+        "title": "Public Information Officer, Loft Board",
+        "email": "nycloftfoilrequest@buildings.nyc.gov"
+      },
+      "appeals": {
+        "first": "Martha",
+        "last": "Cruz",
+        "title": "Executive Director and General Counsel, Loft Board",
+        "email": "nycloftboardfoilappeal@buildings.nyc.gov"
+      }
+    },
+    {
+      "entity": "Manhattan District Attorney's Office",
+      "access": {
+        "first": "Taylor",
+        "last": "Talcott",
+        "title": "Administrative Assistant - FOIL/IA Requests",
+        "email": "RecordsAccessOfficer@dany.nyc.gov"
+      },
+      "appeals": {
+        "first": "Madeleine",
+        "last": "Guilmain",
+        "title": "Managing Attorney",
+        "email": "FOILAppeals@dany.nyc.gov"
+      }
+    },
+    {
+      "entity": "Mayor's Office",
+      "access": {
+        "first": "Sonya",
+        "last": "Levitova",
+        "title": "Associate Counsel",
+        "email": "FOIL@cityhall.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jeff",
+        "last": "Lowell",
+        "title": "Associate Counsel",
+        "email": "FOILAppeal@cityhall.nyc.gov"
+      }
+    },
+    {
+      "entity": "Mayor's Office of Contract Services",
+      "access": {
+        "first": "Jessica",
+        "last": "Lu",
+        "title": "Agency Attorney",
+        "email": "mocsfoil@mocs.nyc.gov"
+      },
+      "appeals": {
+        "first": "David",
+        "last": "Garfinkel",
+        "title": "Senior Deputy General Counsel",
+        "email": "mocsfoil@mocs.nyc.gov"
+      }
+    },
+    {
+      "entity": "Mayor's Office of Criminal Justice",
+      "access": {
+        "first": "Andy",
+        "last": "Laine",
+        "title": "Associate Counsel",
+        "email": "alaine@mocj.nyc.gov"
+      },
+      "appeals": {
+        "first": "Laura",
+        "last": "Mello",
+        "title": "Deputy General Counsel",
+        "email": "lmello@mocj.nyc.gov"
+      }
+    },
+    {
+      "entity": "Mayor's Office of Environmental Remediation",
+      "access": {
+        "first": "Michelle",
+        "last": "Sarro",
+        "title": "Assistant General Counsel",
+        "email": "foil-oer@cityhall.nyc.gov"
+      },
+      "appeals": {
+        "first": "Shaminder",
+        "last": "Chawla",
+        "title": "Director",
+        "email": "FOILAppeals@oer.nyc.gov"
+      }
+    },
+    {
+      "entity": "Mayor's Office of Media and Entertainment",
+      "access": {
+        "first": "Stanislav",
+        "last": "Skarbo",
+        "title": "Staff Counsel",
+        "email": "foil@media.nyc.gov"
+      },
+      "appeals": {
+        "first": "Chisom",
+        "last": "Ananaba",
+        "title": "Assistant General Counsel",
+        "email": "foil@media.nyc.gov"
+      }
+    },
+    {
+      "entity": "New York City Fire Department",
+      "access": {
+        "first": "Alva",
+        "last": "Wright",
+        "title": "Executive Agency Counsel",
+        "email": "foilrequests@fdny.nyc.gov"
+      },
+      "appeals": {
+        "first": "Lisa",
+        "last": "Brandquist",
+        "title": "Assistant Counsel \u2013 Attorney",
+        "email": "FDNYFOIL.Appeals@fdny.nyc.gov"
+      }
+    },
+    {
+      "entity": "New York City Police Department",
+      "access": {
+        "first": "Cynthia",
+        "last": "Acerra",
+        "title": "Records Access Officer",
+        "email": "docprod110c@nypd.org"
+      },
+      "appeals": {
+        "first": "Katherine",
+        "last": "Obanhein",
+        "title": "Appeals Officer",
+        "email": "FOILAppeals@nypd.org"
+      }
+    },
+    {
+      "entity": "NYC Commission on Human Rights",
+      "access": {
+        "first": "Rudolph",
+        "last": "Pyatt",
+        "title": "Agency Attorney",
+        "email": "foil@cchr.nyc.gov"
+      },
+      "appeals": {
+        "first": "Anne",
+        "last": "Meredith",
+        "title": "General Counsel",
+        "email": "cfoilappeals@cchr.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Comptroller's Office",
+      "access": {
+        "first": "Peter",
+        "last": "Torre",
+        "title": "FOIL Officer",
+        "email": "foil@comptroller.ncy.gov"
+      },
+      "appeals": {
+        "first": "R. Josh",
+        "last": "Bliss",
+        "title": "Deputy General Counsel - FOIL Appeals Officer",
+        "email": "jbliss@comptroller.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Department of Health and Mental Hygiene",
+      "access": {
+        "first": "Bernadette",
+        "last": "O'Donnell",
+        "title": "FOIL Officer",
+        "email": "Bodonnell1@health.nyc.gov"
+      },
+      "appeals": {
+        "first": "Chari",
+        "last": "Anhouse",
+        "title": "Associate General Counsel - Legal Affairs",
+        "email": "canhouse@health.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Office of Emergency Management",
+      "access": {
+        "first": "Robert",
+        "last": "DeVoogd",
+        "title": "Senior Agency Counsel",
+        "email": "foilrequests@oem.nyc.gov"
+      },
+      "appeals": {
+        "first": "Sonja",
+        "last": "Orgias",
+        "title": "Chief Counsel",
+        "email": "foilrequests@oem.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Office of Labor Relations",
+      "access": {
+        "first": "Matthew",
+        "last": "Quigley",
+        "title": "Assistant Commissioner - Negotiator",
+        "email": "foil@olr.nyc.gov"
+      },
+      "appeals": {
+        "first": "Shaneka",
+        "last": "McKellar",
+        "title": "Senior Asst. General Counsel/EEO Officer",
+        "email": "FOIL.Appeals@olr.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Office of Technology and Innovation",
+      "access": {
+        "first": "Dominic",
+        "last": "Mauro",
+        "title": "Senior Counsel",
+        "email": "foilrequest@oti.nyc.gov"
+      },
+      "appeals": {
+        "first": "Adrienne",
+        "last": "Williams",
+        "title": "General Counsel",
+        "email": "foilappeal@oti.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Office of the Actuary",
+      "access": {
+        "first": "Marlene",
+        "last": "Markoe-Boyd",
+        "title": "Communications Director",
+        "email": "foil@actuary.nyc.gov"
+      },
+      "appeals": {
+        "first": "Keith",
+        "last": "Snow",
+        "title": "General Counsel",
+        "email": "foil@actuary.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Office of the Chief Medical Examiner",
+      "access": {
+        "first": "Alison",
+        "last": "Nixon",
+        "title": "Special Counsel",
+        "email": "foil@ocme.nyc.gov"
+      },
+      "appeals": {
+        "first": "Geoffrey",
+        "last": "Crary",
+        "title": "Special Counsel",
+        "email": "ocmefoilappeals@ocme.nyc.gov"
+      }
+    },
+    {
+      "entity": "NYC Rent Guidelines Board",
+      "access": {
+        "first": "Andrew",
+        "last": "McLaughlin",
+        "title": "Executive Director",
+        "email": "amclaughlin@rgb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Brian",
+        "last": "Hoberman",
+        "title": "Research Director",
+        "email": "bhoberman@rgb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of Administrative Tax Appeals",
+      "access": {
+        "first": "Judith",
+        "last": "Felder",
+        "title": "",
+        "email": "jfelder@oata.nyc.gov"
+      },
+      "appeals": {
+        "first": "Robert J.",
+        "last": "Firestone",
+        "title": "President",
+        "email": "rfirestone@oata.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of Administrative Trials and Hearings",
+      "access": {
+        "first": "Elizabeth",
+        "last": "Nolan",
+        "title": "Principal Administrative Associate II/ Records Access Officer",
+        "email": "foil@oath.nyc.gov"
+      },
+      "appeals": {
+        "first": "Madeline",
+        "last": "Halimi",
+        "title": "Agency Attorney",
+        "email": "foil@oath.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of Management and Budget",
+      "access": {
+        "first": "David",
+        "last": "Lachance",
+        "title": "Deputy Assistant Director",
+        "email": "lachanced@omb.nyc.gov"
+      },
+      "appeals": {
+        "first": "Jeffrey",
+        "last": "Werner",
+        "title": "General Counsel",
+        "email": "wernerj@omb.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of Payroll Administration",
+      "access": {
+        "first": "Svetlana",
+        "last": "Iosilevich",
+        "title": "Special Counsel",
+        "email": "FOPA@fisa-opa.nyc.gov"
+      },
+      "appeals": {
+        "first": "Maureen",
+        "last": "Murphy",
+        "title": "General Counsel",
+        "email": "appeals@fisa-opa.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of the Brooklyn Borough President",
+      "access": {
+        "first": "Marquise",
+        "last": "Eaddy",
+        "title": "Paralegal",
+        "email": "Marquise.Eaddy@brooklynbp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Peter",
+        "last": "Pottier",
+        "title": "Deputy General Counsel",
+        "email": "Peter.Pottier@brooklynbp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of the NYC Public Advocate",
+      "access": {
+        "first": "Matthew",
+        "last": "Carlin",
+        "title": "Deputy General Counsel",
+        "email": "mcarlin@advocate.nyc.gov"
+      },
+      "appeals": {
+        "first": "Elizabeth",
+        "last": "Guzm\u00e1n",
+        "title": "General Counsel",
+        "email": "eguzman@advocate.nyc.gov"
+      }
+    },
+    {
+      "entity": "Office of the Special Narcotics Prosecutor for the City of New York",
+      "access": {
+        "first": "Ana",
+        "last": "Pichardo",
+        "title": "Records Access Officer",
+        "email": "apichardo@snp.nyc.gov"
+      },
+      "appeals": {
+        "first": "Amy",
+        "last": "Boddorff",
+        "title": "Co-Chief Civil Litigation Unit",
+        "email": "aborddorff@snp.nyc.gov"
+      }
+    },
+    {
+      "entity": "Taxi and Limousine Commission",
+      "access": {
+        "first": "Latifah",
+        "last": "Williams",
+        "title": "Assistant General Counsel/Foil Officer",
+        "email": "foil@tlc.nyc.gov"
+      },
+      "appeals": {
+        "first": "Sherryl",
+        "last": "Eluto",
+        "title": "General Counsel/Deputy Commissioner Legal Affairs & Prosecution",
+        "email": "foil@tlc.nyc.gov"
+      }
+    }
+  ]
+}

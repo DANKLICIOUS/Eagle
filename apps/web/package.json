@@ -1,19 +1,23 @@
 {
   "name": "@plate/web",
   "version": "0.1.0",
-  "description": "PLATE public officer lookup dashboard",
+  "description": "Eagle Intelligence — immersive AI legal education engine",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@plate/api": "workspace:*",
-    "next": "^14.0.4",
+    "@plate/skill-packs": "workspace:*",
+    "next": "^14.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "framer-motion": "^11.3.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.424.0",
+    "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
     "typescript": "^5.3.3",

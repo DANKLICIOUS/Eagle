@@ -1,0 +1,51 @@
+# Eagle + Langflow sidecar
+# Usage:
+#   export LANGFLOW_SUPERUSER_PASSWORD='change-me'
+#   docker compose -f docker-compose.langflow.yml up -d
+#
+# Then point Eagle API:
+#   LANGFLOW_ENABLED=true
+#   LANGFLOW_BASE_URL=http://localhost:7860
+#   LANGFLOW_API_KEY=<from Langflow settings>
+#   LANGFLOW_FLOW_FOIL=<uuid>
+#
+# Source tree: /Users/ganesh/langflow (langflow-ai/langflow)
+# Prefer image >= 1.9.x for security patches.
+
+services:
+  langflow:
+    image: langflowai/langflow:1.9.6
+    pull_policy: if_not_present
+    ports:
+      - "7860:7860"
+    depends_on:
+      - langflow-postgres
+    environment:
+      - LANGFLOW_DATABASE_URL=postgresql://langflow:langflow@langflow-postgres:5432/langflow
+      - LANGFLOW_SUPERUSER_PASSWORD=${LANGFLOW_SUPERUSER_PASSWORD:-eagle-dev-change-me}
+      - LANGFLOW_CONFIG_DIR=/app/langflow
+      # Keep auto-login off on any network-exposed deploy
+      - LANGFLOW_AUTO_LOGIN=false
+    volumes:
+      - eagle-langflow-data:/app/langflow
+    networks:
+      - eagle-net
+
+  langflow-postgres:
+    image: postgres:16-trixie
+    environment:
+      POSTGRES_USER: langflow
+      POSTGRES_PASSWORD: langflow
+      POSTGRES_DB: langflow
+    volumes:
+      - eagle-langflow-pg:/var/lib/postgresql/data
+    networks:
+      - eagle-net
+
+volumes:
+  eagle-langflow-data:
+  eagle-langflow-pg:
+
+networks:
+  eagle-net:
+    driver: bridge

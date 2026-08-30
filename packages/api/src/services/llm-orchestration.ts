@@ -1,14 +1,18 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { config } from '../config';
 import type { CCRBAllegation, OfficerProfile } from '@plate/database';
+import { DRAFT_BANNER, GLOBAL_SYSTEM_PREAMBLE } from '@plate/skill-packs';
 
 const client = new Anthropic({
   apiKey: config.anthropic.apiKey,
 });
 
+const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-20250514';
+
 /**
- * Result of legal analysis performed on officer allegations.
- * Contains pattern analysis, risk assessment, and recommendations.
+ * Educational pattern summary of public allegation records.
+ * Field names kept for API compatibility; semantics are educational (not legal advice).
+ * riskFactors → research considerations; recommendations → educational next steps.
  */
 export interface LegalAnalysis {
   summary: string;
@@ -18,8 +22,8 @@ export interface LegalAnalysis {
 }
 
 /**
- * Context information for FOIL (Freedom of Information Law) requests.
- * Contains officer misconduct summary, examples, legal arguments, and evidence gaps.
+ * Educational FOIL study context.
+ * legal_arguments = FOIL study points citing POL as reading pointers (not advocacy).
  */
 export interface FOILContext {
   officerMisconduct: string;
@@ -28,10 +32,24 @@ export interface FOILContext {
   evidence_gaps: string[];
 }
 
+function parseJsonFromModel(text: string): unknown {
+  let jsonStr = text;
+  const jsonMatch = jsonStr.match(/```json\n?([\s\S]*?)\n?```/);
+  if (jsonMatch) {
+    jsonStr = jsonMatch[1];
+  } else {
+    const objectMatch = jsonStr.match(/\{[\s\S]*\}/);
+    if (objectMatch) {
+      jsonStr = objectMatch[0];
+    }
+  }
+  return JSON.parse(jsonStr);
+}
+
 export class LLMOrchestration {
   /**
-   * Analyzes CCRB allegations against an officer using Claude
-   * Evaluates patterns, risk factors, and provides legal recommendations
+   * Educational pattern summary of CCRB-style public allegation rows.
+   * Adapted to educational framing (claude-for-legal: leads not authorities).
    */
   static async analyzeAllegations(
     allegations: CCRBAllegation[],
@@ -46,7 +64,6 @@ export class LLMOrchestration {
       };
     }
 
-    // Format allegations for analysis
     const allegationsSummary = allegations
       .map(
         (a) => `
@@ -61,63 +78,44 @@ export class LLMOrchestration {
       )
       .join('\n');
 
-    const prompt = `You are a legal expert analyzing police misconduct allegations from the CCRB (Civilian Complaint Review Board). Analyze the following allegations against officer ${officer.first_name || ''} ${officer.last_name || ''} (Badge: ${officer.badge_number || 'Unknown'}).
+    const prompt = `Produce an EDUCATIONAL pattern summary of public CCRB-style allegation records for learning and FOIL scoping only — not legal advice, liability conclusions, or litigation strategy.
 
-OFFICER PROFILE:
+OFFICER PROFILE (public-record style fields):
 - Tax ID: ${officer.tax_id}
-- Active Allegations: ${officer.active_allegations_count}
-- Total Allegations: ${officer.total_allegations_count}
-- Substantiated Allegations: ${officer.substantiated_allegations_count}
+- Name: ${officer.first_name || ''} ${officer.last_name || ''}
+- Badge: ${officer.badge_number || 'Unknown'}
 - Rank: ${officer.rank || 'Unknown'}
 - Precinct: ${officer.precinct_number || 'Unknown'}
+- Active / total / substantiated counts: ${officer.active_allegations_count} / ${officer.total_allegations_count} / ${officer.substantiated_allegations_count}
 
 ALLEGATIONS:
 ${allegationsSummary}
 
-Please provide a JSON response with the following structure:
+Return ONLY valid JSON:
 {
-  "summary": "A brief 2-3 sentence summary of the allegations and patterns",
-  "pattern": "Description of any patterns identified (e.g., repeated conduct type, specific precinct issues, escalation over time)",
-  "riskFactors": ["Array of specific risk factors identified"],
-  "recommendations": ["Array of legal recommendations or next steps"]
+  "summary": "2–3 neutral sentences on what the public records show. No guilt conclusions.",
+  "pattern": "Educational description of recurring categories or disposition mix. Patterns are research signals only.",
+  "riskFactors": ["Factual/educational research considerations to verify — not legal risk scores"],
+  "recommendations": ["Process-learning steps only (e.g. review FOIL guidance, discuss with licensed attorney) — never case strategy"]
 }
 
-Focus on patterns, severity, and legal implications.`;
+Forbidden: sue/file advice, guarantees, invented case law, equating dispositions with criminal guilt.`;
 
     try {
       const message = await client.messages.create({
-        model: 'claude-opus-4-8',
+        model: MODEL,
         max_tokens: 1024,
-        messages: [
-          {
-            role: 'user',
-            content: prompt,
-          },
-        ],
+        system: GLOBAL_SYSTEM_PREAMBLE,
+        messages: [{ role: 'user', content: prompt }],
       });
 
-      // Extract text content from response
       const textContent = message.content.find((c) => c.type === 'text');
       if (!textContent || textContent.type !== 'text') {
         throw new Error('No text content in response');
       }
 
-      // Parse JSON from response (may be wrapped in markdown code blocks)
-      let jsonStr = textContent.text;
-      const jsonMatch = jsonStr.match(/```json\n?([\s\S]*?)\n?```/);
-      if (jsonMatch) {
-        jsonStr = jsonMatch[1];
-      } else {
-        // Try to extract JSON object directly
-        const objectMatch = jsonStr.match(/\{[\s\S]*\}/);
-        if (objectMatch) {
-          jsonStr = objectMatch[0];
-        }
-      }
+      const analysis = parseJsonFromModel(textContent.text) as LegalAnalysis;
 
-      const analysis = JSON.parse(jsonStr) as LegalAnalysis;
-
-      // Validate response structure
       if (!analysis.summary || !analysis.pattern) {
         throw new Error('Invalid response structure from Claude');
       }
@@ -135,14 +133,12 @@ Focus on patterns, severity, and legal implications.`;
   }
 
   /**
-   * Generates FOIL (Freedom of Information Law) context for substantiated allegations
-   * Creates legal arguments and identifies evidence gaps
+   * Educational FOIL study notes from substantiated public rows.
    */
   static async generateFOILContext(
     officer: OfficerProfile,
     allegations: CCRBAllegation[]
   ): Promise<FOILContext> {
-    // Filter to substantiated allegations only
     const substantiatedAllegations = allegations.filter(
       (a) =>
         a.board_disposition === 'Substantiated' ||
@@ -151,14 +147,13 @@ Focus on patterns, severity, and legal implications.`;
 
     if (!substantiatedAllegations || substantiatedAllegations.length === 0) {
       return {
-        officerMisconduct: 'No substantiated allegations found',
+        officerMisconduct: 'No substantiated allegations found in provided public rows',
         misconduct_examples: [],
         legal_arguments: [],
         evidence_gaps: [],
       };
     }
 
-    // Format substantiated allegations for FOIL context
     const allegationDetails = substantiatedAllegations
       .map(
         (a) => `
@@ -172,61 +167,43 @@ Focus on patterns, severity, and legal implications.`;
       )
       .join('\n');
 
-    const prompt = `You are a legal expert specializing in FOIL (Freedom of Information Law) requests under NY Public Officers Law Article 6. Generate context for FOIL requests based on substantiated CCRB allegations against officer ${officer.first_name || ''} ${officer.last_name || ''}.
+    const prompt = `Prepare EDUCATIONAL FOIL study notes from substantiated public CCRB-style records. Help the user learn how FOIL requests are structured — not legal arguments for a court.
 
 OFFICER INFORMATION:
-- Badge Number: ${officer.badge_number || 'Unknown'}
+- Name: ${officer.first_name || ''} ${officer.last_name || ''}
+- Badge: ${officer.badge_number || 'Unknown'}
 - Rank: ${officer.rank || 'Unknown'}
 - Precinct: ${officer.precinct_number || 'Unknown'}
-- Substantiated Allegations Count: ${officer.substantiated_allegations_count}
+- Substantiated count field: ${officer.substantiated_allegations_count}
 
-SUBSTANTIATED ALLEGATIONS:
+SUBSTANTIATED ALLEGATIONS (as provided):
 ${allegationDetails}
 
-Please provide a JSON response with this structure:
+Return ONLY valid JSON:
 {
-  "officerMisconduct": "A 1-2 sentence overview of the officer's substantiated misconduct pattern",
-  "misconduct_examples": ["List of specific examples from substantiated allegations that would justify FOIL requests"],
-  "legal_arguments": ["List of legal arguments for why these records should be publicly available under FOIL. MUST cite NY Public Officers Law § 84, § 87, or § 89 in each argument"],
-  "evidence_gaps": ["List of specific types of records/evidence that would be needed for a strong FOIL request"]
+  "officerMisconduct": "1–2 sentence educational restatement of what substantiated public dispositions reflect; do not assert courtroom findings beyond agency labels",
+  "misconduct_examples": ["Short factual bullets drawn only from provided substantiated rows"],
+  "legal_arguments": ["Educational FOIL study points that reference NY Public Officers Law § 84, § 87, or § 89 as reading pointers [public statute — verify] — not advocacy"],
+  "evidence_gaps": ["Record types a learner might research (BWC, memo books, CAD) as educational checklist items"]
 }
 
-Focus on factual, substantiated information, legal citations to NY Public Officers Law, and justifications for document requests.`;
+Do not claim exemptions never apply. Do not assert mandatory disclosure of any specific document.`;
 
     try {
       const message = await client.messages.create({
-        model: 'claude-opus-4-8',
+        model: MODEL,
         max_tokens: 1024,
-        messages: [
-          {
-            role: 'user',
-            content: prompt,
-          },
-        ],
+        system: GLOBAL_SYSTEM_PREAMBLE,
+        messages: [{ role: 'user', content: prompt }],
       });
 
-      // Extract text content from response
       const textContent = message.content.find((c) => c.type === 'text');
       if (!textContent || textContent.type !== 'text') {
         throw new Error('No text content in response');
       }
 
-      // Parse JSON from response (may be wrapped in markdown code blocks)
-      let jsonStr = textContent.text;
-      const jsonMatch = jsonStr.match(/```json\n?([\s\S]*?)\n?```/);
-      if (jsonMatch) {
-        jsonStr = jsonMatch[1];
-      } else {
-        // Try to extract JSON object directly
-        const objectMatch = jsonStr.match(/\{[\s\S]*\}/);
-        if (objectMatch) {
-          jsonStr = objectMatch[0];
-        }
-      }
+      const foilContext = parseJsonFromModel(textContent.text) as FOILContext;
 
-      const foilContext = JSON.parse(jsonStr) as FOILContext;
-
-      // Validate response structure
       if (!foilContext.officerMisconduct) {
         throw new Error('Invalid response structure from Claude');
       }
@@ -244,9 +221,8 @@ Focus on factual, substantiated information, legal citations to NY Public Office
   }
 
   /**
-   * Generates a formal FOIL letter document based on officer profile and FOIL context
-   * Creates a legal letter that self-representing individuals can print and submit to NYPD/courts
-   * Includes statute citations (NY Public Officers Law § 84, 87, 89)
+   * Educational sample FOIL letter for attorney/user review — not a filing.
+   * Pattern adapted from claude-for-legal legal-clinic draft skill.
    */
   static async generateFOILLetter(
     officer: OfficerProfile,
@@ -258,7 +234,7 @@ Focus on factual, substantiated information, legal citations to NY Public Office
       day: 'numeric',
     });
 
-    const prompt = `You are an expert legal document writer. Generate a formal FOIL (Freedom of Information Law) letter that a self-representing individual can submit to the NYPD or courts. The letter should reference the officer and their misconduct pattern.
+    const prompt = `Draft an EDUCATIONAL SAMPLE FOIL request letter for the user to study and optionally revise with a licensed attorney. This is NOT a filing, NOT legal advice, and NOT guaranteed to be accepted or answered.
 
 OFFICER INFORMATION:
 - Name: ${officer.first_name || 'Officer'} ${officer.last_name || '(Name Unknown)'}
@@ -266,44 +242,44 @@ OFFICER INFORMATION:
 - Rank: ${officer.rank || 'Unknown'}
 - Precinct: ${officer.precinct_number || 'Unknown'}
 
-FOIL CONTEXT:
-- Officer Misconduct Summary: ${context.officerMisconduct}
-- Misconduct Examples: ${context.misconduct_examples.join('; ')}
-- Legal Arguments: ${context.legal_arguments.join('; ')}
-- Evidence Gaps: ${context.evidence_gaps.join('; ')}
+FOIL STUDY CONTEXT (may be incomplete):
+- Summary: ${context.officerMisconduct}
+- Examples: ${context.misconduct_examples.join('; ')}
+- Study points: ${context.legal_arguments.join('; ')}
+- Possible record gaps: ${context.evidence_gaps.join('; ')}
 
-Generate a formal, professional FOIL letter that:
-1. Starts with proper legal heading and date (${letterDate})
-2. Identifies the requesting agency (NYPD) and the specific officer
-3. Contains at least one cite to NY Public Officers Law § 84, § 87, or § 89 for each legal argument presented
-4. Requests specific categories of documents based on the substantiated misconduct
-5. Is formatted as a complete, printable legal document
-6. Includes proper legal formatting (addressee, salutation, body, closing)
-7. Specifies the statutory response timeline (20 business days)
-8. Can be printed and submitted immediately by the user
+Letter requirements:
+1. FIRST LINE (required): ${DRAFT_BANNER}
+2. Date line using: ${letterDate}
+3. Placeholder blocks for requester name, address, email, phone (do not invent a real identity).
+4. Addressee: Records Access Officer for a relevant agency (e.g. NYPD) as an educational example.
+5. Request body: clear categories of records; only use facts provided; use [FACT NEEDED] for gaps.
+6. You MAY mention N.Y. Public Officers Law Article 6 and commonly discussed §§ 84, 87, 89 as educational references [public statute — verify]. Do NOT invent case citations.
+7. Note that acknowledgment/response timelines are statutory frameworks subject to extensions and exemptions — do not promise 5- or 20-day results.
+8. Closing: "Sincerely," + placeholders. Do not say the letter is court-ready or "submit immediately."
+9. End with a short user review checklist (facts accurate, VERIFY flags, attorney review before send).
+10. Return plain text only (no markdown fences).
 
-Return ONLY the letter text, formatted and ready to print. No markdown, no code blocks, just the complete legal document.`;
+Forbidden: guarantees; "no exemption applies"; courtroom filings; advice to sue; claiming Eagle is the user's attorney.`;
 
     try {
       const message = await client.messages.create({
-        model: 'claude-opus-4-8',
+        model: MODEL,
         max_tokens: 4096,
-        messages: [
-          {
-            role: 'user',
-            content: prompt,
-          },
-        ],
+        system: GLOBAL_SYSTEM_PREAMBLE,
+        messages: [{ role: 'user', content: prompt }],
       });
 
-      // Extract text content from response
       const textContent = message.content.find((c) => c.type === 'text');
       if (!textContent || textContent.type !== 'text') {
         throw new Error('No text content in response');
       }
 
-      // Return the letter text as-is (no JSON parsing needed)
-      return textContent.text;
+      let letter = textContent.text.trim();
+      if (!letter.includes('EDUCATIONAL DRAFT')) {
+        letter = `${DRAFT_BANNER}\n\n${letter}`;
+      }
+      return letter;
     } catch (error) {
       console.error('Error generating FOIL letter:', error);
       throw error;

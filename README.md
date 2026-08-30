@@ -75,17 +75,23 @@ Automated legal document generator creating demands under NY Public Officers Law
 ## Getting Started
 
 ```bash
-cd /Users/swagger/PLATE
+cd /Users/ganesh/Eagle
 
 # Install dependencies
-npm install
+npx pnpm@9 install
+cd packages/skill-packs && npx tsc && cd ../..
 
-# Run migrations
-npm run migrate
+# Web (immersive AI engine)
+cd apps/web && npx next dev -p 3000
 
-# Start development
-npm run dev
+# API (optional — educational agent + FOIL/officers; set ANTHROPIC_API_KEY for live LLM)
+cd packages/api && npx ts-node src/index.ts
 ```
+
+Educational skill packs (claude-for-legal adapted): see `docs/CLAUDE_FOR_LEGAL_INTEGRATION.md`.  
+Langflow visual flows: see `docs/LANGFLOW_INTEGRATION.md` · `docker-compose.langflow.yml`  
+Engine: http://localhost:3000/engine · Flows: http://localhost:3000/flows · Agent: http://localhost:3001/api/agent/skills
+
 
 ## Database Schema
 
