@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "description": "Pro Se Legal Accountability & Transparency Engine",
   "private": true,
+  "scripts": {
+    "dev": "pnpm --filter @plate/web dev",
+    "build": "pnpm --filter @plate/skill-packs run build && pnpm --filter @plate/database run build && pnpm --filter @plate/api run build && pnpm --filter @plate/web run build",
+    "typecheck": "pnpm --filter @plate/skill-packs run build && pnpm --filter @plate/database run build && pnpm --filter @plate/web exec tsc --noEmit && pnpm --filter @plate/api exec tsc --noEmit"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"

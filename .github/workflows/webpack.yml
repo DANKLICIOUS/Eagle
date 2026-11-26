@@ -30,4 +30,4 @@ jobs:
     - name: Build
       run: |
         pnpm install
-        pnpm --filter '*' run build
+        pnpm build

@@ -5,13 +5,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build",
+    "build": "pnpm --dir ../.. --filter @plate/skill-packs run build && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@plate/skill-packs": "workspace:*",
     "next": "^14.2.5",
+    "ogl": "0.0.116",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "framer-motion": "^11.3.0",

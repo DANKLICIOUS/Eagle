@@ -74,15 +74,22 @@ export async function generateEngineReply(
   const surface = options?.surface ?? 'engine';
   const history = options?.history ?? [];
 
-  // Prefer live agent when API is reachable
+  // Prefer a live agent only when an API base is configured. In production the
+  // public site has no backend, and calling /api/plate would just 404.
+  const base = apiBase();
+  const liveUrl = base
+    ? `${base.replace(/\/$/, '')}/api/agent/chat`
+    : process.env.NODE_ENV === 'development'
+      ? '/api/plate/agent/chat'
+      : '';
+
+  if (liveUrl) {
   try {
-    const base = apiBase();
-    const url = base ? `${base.replace(/\/$/, '')}/api/agent/chat` : '/api/plate/agent/chat';
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 25000);
 
-    const res = await fetch(url, {
+    const res = await fetch(liveUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -101,6 +108,7 @@ export async function generateEngineReply(
     }
   } catch {
     // fall through to static skill packs
+  }
   }
 
   // Simulated latency for immersive offline feel

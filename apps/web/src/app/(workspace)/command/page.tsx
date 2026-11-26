@@ -29,14 +29,19 @@ export default function CommandDeckPage() {
   return (
     <div className="stack gap-lg">
       <StageHeader
-        eyebrow="Eagle Intelligence · Ecosystem"
+        eyebrow="SUI · Eagle workspace"
         title="Command Deck"
         subtitle="Hyper-interactive educational AI engine for public records literacy, FOIL process learning, and secure research workflows — not legal representation."
         actions={
-          <Link href="/engine" className="btn btn-primary">
-            Enter AI Engine
-            <ArrowRight size={16} />
-          </Link>
+          <>
+            <Link href="/" className="btn btn-ghost">
+              SUI home
+            </Link>
+            <Link href="/engine" className="btn btn-primary">
+              Enter AI Engine
+              <ArrowRight size={16} />
+            </Link>
+          </>
         }
       />
 
