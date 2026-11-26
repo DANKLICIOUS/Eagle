@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { StageHeader } from '@/components/StageHeader';
 import { DisclaimerBar } from '@/components/DisclaimerBar';
 import { Workflow, ExternalLink, RefreshCw, Zap } from 'lucide-react';
@@ -32,15 +33,15 @@ export default function FlowsPage() {
         setHealth({
           configured: false,
           reachable: false,
-          baseUrl: 'http://localhost:7860',
-          message: 'API offline — start packages/api',
+          baseUrl: '',
+          message: 'No pipeline is connected. The educational engine still answers from the on-device skill packs.',
         });
     } catch {
       setHealth({
         configured: false,
         reachable: false,
-        baseUrl: 'http://localhost:7860',
-        message: 'Could not reach Eagle API',
+        baseUrl: '',
+        message: 'No pipeline is connected. The educational engine still answers from the on-device skill packs.',
       });
     } finally {
       setLoading(false);
@@ -48,6 +49,16 @@ export default function FlowsPage() {
   }
 
   useEffect(() => {
+    if (process.env.NODE_ENV !== 'development' && !process.env.NEXT_PUBLIC_API_URL) {
+      setHealth({
+        configured: false,
+        reachable: false,
+        baseUrl: '',
+        message: 'No pipeline is connected. The educational engine still answers from the on-device skill packs.',
+      });
+      setLoading(false);
+      return;
+    }
     void load();
   }, []);
 
@@ -76,17 +87,23 @@ export default function FlowsPage() {
       <StageHeader
         eyebrow="Module · Langflow"
         title="Visual Flow Studio"
-        subtitle="Wire educational skill packs into Langflow agent pipelines. Design multi-step FOIL, CCRB, and research flows visually — then run them from Eagle."
+        subtitle="Operator surface for visual agent pipelines. Public answers do not depend on it — the engine, FOIL draft, and officer lookup run without a pipeline."
         actions={
           <>
-            <button type="button" className="btn" onClick={() => void load()}>
+            <button type="button" className="btn" onClick={() => void load()} disabled={loading}>
               <RefreshCw size={14} />
-              Refresh
+              {loading ? 'Checking…' : 'Refresh'}
             </button>
-            <a className="btn btn-primary" href={uiUrl} target="_blank" rel="noreferrer">
-              Open Langflow UI
-              <ExternalLink size={14} />
-            </a>
+            {health?.reachable ? (
+              <a className="btn btn-primary" href={uiUrl} target="_blank" rel="noreferrer">
+                Open pipeline studio
+                <ExternalLink size={14} />
+              </a>
+            ) : (
+              <Link href="/engine" className="btn btn-primary">
+                Open the engine
+              </Link>
+            )}
           </>
         }
       />
@@ -124,11 +141,15 @@ export default function FlowsPage() {
             <p className="muted" style={{ margin: 0, fontSize: '0.9rem' }}>
               {health?.message || '—'}
             </p>
-            <p className="dim" style={{ margin: 0, fontSize: '0.82rem', lineHeight: 1.5 }}>
-              Start with Docker:{' '}
-              <code className="mono">docker compose -f docker-compose.langflow.yml up</code> from the
-              Eagle repo. Set <code className="mono">LANGFLOW_ENABLED=true</code> on the API.
-            </p>
+            {health?.reachable ? (
+              <p className="dim" style={{ margin: 0, fontSize: '0.82rem', lineHeight: 1.5 }}>
+                Studio: <code className="mono">{uiUrl}</code>
+              </p>
+            ) : (
+              <p className="dim" style={{ margin: 0, fontSize: '0.82rem', lineHeight: 1.5 }}>
+                Operators connect a pipeline from the API host. Visitors can keep working in the engine.
+              </p>
+            )}
           </div>
         </div>
 
@@ -154,9 +175,7 @@ export default function FlowsPage() {
             ))}
             {!health?.mappedFlows?.length ? (
               <p className="muted" style={{ margin: 0, fontSize: '0.88rem' }}>
-                No flow UUIDs mapped yet. Create flows in Langflow, then set env:
-                <br />
-                <code className="mono">LANGFLOW_FLOW_FOIL=&lt;uuid&gt;</code>
+                No pipelines are mapped. The skill packs still answer in the engine.
               </p>
             ) : null}
             <div className="row-wrap">
@@ -193,8 +212,13 @@ export default function FlowsPage() {
               onChange={(e) => setTestMsg(e.target.value)}
             />
           </label>
-          <button className="btn btn-primary" type="button" disabled={running} onClick={() => void runFlow()}>
-            {running ? 'Running…' : 'POST /api/langflow/run'}
+          <button
+            className="btn btn-primary"
+            type="button"
+            disabled={running || !health?.reachable}
+            onClick={() => void runFlow()}
+          >
+            {running ? 'Running…' : health?.reachable ? 'Run pipeline' : 'Pipeline offline'}
           </button>
           {runOut ? (
             <pre
@@ -214,21 +238,6 @@ export default function FlowsPage() {
         </div>
       </div>
 
-      <div className="panel">
-        <div className="panel-header">
-          <span className="mono" style={{ fontSize: '0.8rem' }}>
-            REFERENCE UX · INFO.UFO
-          </span>
-        </div>
-        <div className="panel-body">
-          <p className="muted" style={{ margin: 0, lineHeight: 1.6 }}>
-            Visual direction from your reference: holographic vault core, green accent security
-            language, floating AI assistant rail (Anie), and multi-step access flow. Eagle implements
-            the educational twin — vault + engine + skill packs + optional Langflow orchestration —
-            without “defend and win” claims.
-          </p>
-        </div>
-      </div>
     </div>
   );
 }

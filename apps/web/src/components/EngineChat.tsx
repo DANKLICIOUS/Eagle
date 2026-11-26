@@ -60,6 +60,17 @@ export function EngineChat({ compactCore = false }: { compactCore?: boolean }) {
         history: history.slice(0, -1),
       });
       setMessages((m) => [...m, reply]);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        {
+          id: `err-${Date.now()}`,
+          role: 'assistant',
+          content:
+            'The engine could not answer just now. Try again, or continue in the records request and officer lookup.',
+          createdAt: new Date().toISOString(),
+        },
+      ]);
     } finally {
       setBusy(false);
     }
@@ -75,10 +86,10 @@ export function EngineChat({ compactCore = false }: { compactCore?: boolean }) {
       {!compactCore && messages.length === 0 ? (
         <div className="stack" style={{ alignItems: 'center', padding: '12px 0 8px' }}>
           <AiCore size={160} />
-          <p className="muted" style={{ textAlign: 'center', maxWidth: 520, margin: 0 }}>
-            Immersive educational core online — skill packs adapted from{' '}
-            <strong style={{ color: 'var(--text)' }}>claude-for-legal</strong> (clinic draft,
-            research-start, chronology) with App Store educational framing.
+          <p className="muted" style={{ textAlign: 'center', maxWidth: 520, margin: 0, lineHeight: 1.55 }}>
+            Ask how a New York records request works, what a public complaint disposition means, or how
+            to organize a chronology. Answers are educational. They are not legal advice, and nothing
+            here is filed for you.
           </p>
           <div className="row-wrap" style={{ justifyContent: 'center', maxWidth: 640 }}>
             {skills.map((s) => (
@@ -111,9 +122,8 @@ export function EngineChat({ compactCore = false }: { compactCore?: boolean }) {
                   <span>·</span>
                   <span>Ready</span>
                 </div>
-                Initialize a query or pick a starter prompt. Messages are routed to educational skill
-                packs (FOIL, CCRB, research leads-not-authorities, chronology, constitutional
-                literacy). Live LLM when API is up; otherwise static skill content.
+                Ask a process question, or choose a starter. Replies stay inside educational skill
+                packs: FOIL, public complaints, research leads, chronology, and constitutional literacy.
               </div>
             ) : null}
 

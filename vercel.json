@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "echo 'Set the sui-law Vercel project Root Directory to apps/web and Framework Preset to Next.js. A repository-root deploy has no index and / returns 404 NOT_FOUND.' && exit 1"
+}

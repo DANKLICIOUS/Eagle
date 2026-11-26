@@ -22,9 +22,9 @@
   --text-muted: #8aa0b8;
   --text-dim: #5a7088;
 
-  --font-display: "Segoe UI", "SF Pro Display", system-ui, sans-serif;
-  --font-body: "Segoe UI", "SF Pro Text", system-ui, sans-serif;
-  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", ui-monospace, monospace;
 
   --radius: 14px;
   --radius-lg: 22px;
@@ -335,12 +335,13 @@ select {
   display: grid;
   place-items: center;
   margin-bottom: 16px;
-  background: linear-gradient(145deg, rgba(0, 229, 255, 0.2), rgba(139, 92, 255, 0.15));
-  border: 1px solid var(--border-strong);
-  box-shadow: 0 0 30px var(--cyan-glow);
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  color: var(--cyan);
+  background: linear-gradient(145deg, rgba(245, 226, 174, 0.22), rgba(139, 108, 255, 0.16));
+  border: 1px solid rgba(216, 173, 99, 0.45);
+  box-shadow: 0 0 28px rgba(216, 173, 99, 0.18);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #f5e2ae;
+  font-family: "Cinzel", serif;
 }
 
 .nav-item {
@@ -600,7 +601,9 @@ select {
     height: auto;
     width: 100%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-start;
+    gap: 4px;
+    overflow-x: auto;
     padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
     border-right: none;
     border-top: 1px solid var(--border);
@@ -608,7 +611,12 @@ select {
   }
 
   .nav-logo {
-    display: none;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0;
+    flex: 0 0 auto;
+    font-size: 0.62rem;
   }
 
   .nav-spacer {
@@ -616,8 +624,9 @@ select {
   }
 
   .nav-item {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
   }
 
   .nav-item .tooltip {

@@ -17,7 +17,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 | Route | Surface |
 |-------|---------|
-| `/` | Command Deck — ecosystem hub + AI core |
+| `/` | SUI public landing (cinematic intro, prism, links into the workspace) |
+| `/command` | Command Deck — Eagle ecosystem hub + AI core |
 | `/engine` | Interactive AI Engine chat |
 | `/vault` | Secure document vault (demo local-first) |
 | `/officers` | Public CCRB-style officer lookup (demo data) |

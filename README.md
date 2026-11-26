@@ -72,6 +72,23 @@ Automated legal document generator creating demands under NY Public Officers Law
 - CCRB complaint records
 - Multi-incident tracking documentation
 
+## Deployment (Vercel project `sui-law`)
+
+The public site is the Next.js app in `apps/web`. The repository root is not a web app. Pointing the Vercel project at the root (or leaving the old static `framework: null` config in place) publishes an empty output, and `https://sui-law.vercel.app/` returns Vercel's `404: NOT_FOUND`.
+
+In the `sui-law` project settings:
+
+| Setting | Value |
+| --- | --- |
+| Root Directory | `apps/web` |
+| Framework Preset | Next.js |
+| Node.js | 22.x |
+| Install Command | leave default (pnpm installs the workspace from the repo root) |
+| Build Command | `pnpm --dir ../.. --filter @plate/skill-packs run build && next build` (also in `apps/web/vercel.json`) |
+| Output Directory | leave default |
+
+No environment variables are required for the public landing, the demo officer index, local FOIL drafts, or the static educational replies. Do not set `PLATE_API_URL`, `NEXT_PUBLIC_API_URL`, or `ANTHROPIC_API_KEY` on this project unless a separate API is meant to be reachable from the public site.
+
 ## Getting Started
 
 ```bash

@@ -16,7 +16,7 @@ import {
 import clsx from 'clsx';
 
 const ITEMS = [
-  { href: '/', label: 'Command', icon: Home },
+  { href: '/command', label: 'Command', icon: Home },
   { href: '/engine', label: 'AI Engine', icon: BrainCircuit },
   { href: '/flows', label: 'Flows', icon: Workflow },
   { href: '/vault', label: 'Vault', icon: FolderLock },
@@ -32,11 +32,11 @@ export function NavRail() {
 
   return (
     <nav className="nav-rail" aria-label="Primary">
-      <Link href="/" className="nav-logo" title="Eagle Intelligence">
-        EI
+      <Link href="/" className="nav-logo" title="SUI home" style={{ fontSize: '0.72rem', letterSpacing: '0.08em' }}>
+        SUI
       </Link>
       {ITEMS.map(({ href, label, icon: Icon }) => {
-        const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
+        const active = pathname === href || (href !== '/command' && pathname.startsWith(href));
         return (
           <Link
             key={href}
